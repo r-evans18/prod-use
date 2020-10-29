@@ -22,7 +22,11 @@ class ProducerController extends Controller
     public function view($id)
     {
         $store = ProducerLocation::where('id', $id)->first();
-        return view('customer.producer.view', compact('store'));
+        if ($store) {
+            return view('customer.producer.view', compact('store'));
+        } else {
+            return redirect()->back()->with('warning', 'Unable to find producer');
+        }
     }
 
     public function items($id)
@@ -49,11 +53,13 @@ class ProducerController extends Controller
         return redirect()->back()->with('warning', 'You already follow this producer');
     }
 
-    public function register() {
+    public function register()
+    {
         return view('auth.register-producer');
     }
 
-    public function registerSubmit(Request $request) {
+    public function registerSubmit(Request $request)
+    {
         $name = $request->input('name');
         $email = $request->input('email');
         $password = $request->input('password');
