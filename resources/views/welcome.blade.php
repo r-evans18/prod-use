@@ -24,6 +24,14 @@
         <div class="col-md-6">
             <img class="rounded" src="https://designshack.net/wp-content/uploads/placeholder-image.png">
         </div>
+        <div class="col-md-12">
+            <div class="font-bold text-xl mb-2 mt-4">Are you a producer?</div>
+            <p>
+                Brining all local producers right to your finger tips.
+                Search by your postcode to see local producers and the food they have in stock straight away without any delays.
+            </p>
+            <a href="{{ route('register-producer.index') }}">Register your producer account</a>
+        </div>
     </div>
 
     <div class="row mt-12">
@@ -79,18 +87,12 @@
                             <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
                             <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
                         </div>
-                    <div class="font-bold text-xl mb-2 mt-4">Are you a producer?</div>
-                        <p>
-                            Brining all local producers right to your finger tips.
-                            Search by your postcode to see local producers and the food they have in stock straight away without any delays.
-                        </p>
-                        <a href="{{ route('register-producer.index') }}">Register your producer account</a>
                     </div>
                 </div>
             </div>
-            <center>
+            <div class="row justify-content-center">
                 <a class="btn btn-primary mt-4" href="{{ route('producer.index') }}">Find more near you!</a>
-            </center>
+            </div>
         </div>
     </div>
 
