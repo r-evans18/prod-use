@@ -34,6 +34,9 @@ class ProducerController extends Controller
 
     public function followProducer($id)
     {
+        if (Auth::guest()) {
+            return redirect()->back()->with('warning', 'Please ensure you are logged in to follow');
+        }
         $check = ProducerFollow::where('producer_id', $id)->where('user_id', Auth::user()->id)->count();
         if ($check == 0) {
             $follow = new ProducerFollow();
